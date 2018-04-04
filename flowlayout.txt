@@ -1,0 +1,47 @@
+/*
+ * flowlayout example
+ * 
+ */
+
+package com.userInterface;
+import java.awt.*;
+import javax.swing.*;
+public class Flowlay extends JFrame {
+	//define components
+	JButton jb1,jb2,jb3,jb4,jb5,jb6;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Flowlay fl=new Flowlay();
+	}
+	//GouZao function
+	public Flowlay()
+	{
+		//create components
+		jb1=new JButton("GY");
+		jb1.setSize(50,50);
+		jb2=new JButton("ZF");
+		jb3=new JButton("ZY");
+		jb4=new JButton("MC");
+		jb5=new JButton("HZ");
+		jb6=new JButton("WY");
+		
+		//add components
+		this.add(jb1);
+		this.add(jb2);
+		this.add(jb3);
+		this.add(jb4);
+		this.add(jb5);
+		this.add(jb6);
+		//set layout manager
+		this.setLayout(new FlowLayout(FlowLayout.LEADING));
+		//this.setLayout(null);
+		//set frame
+		this.setTitle("FlowLayout Example");
+		this.setSize(300, 200);
+		this.setLocation(200,200);
+		//not allow client to change frame size
+		this.setResizable(false);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setVisible(true);
+	}
+}

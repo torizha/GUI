@@ -1,0 +1,44 @@
+package com.userInterface;
+import java.awt.*;
+import javax.swing.*;
+public class QQframe extends JFrame{
+	//we need below components
+	JTextArea jta=null;
+	JPanel jp1=null;
+	JComboBox jcb=null;
+	JTextField jtf=null;
+	JButton jb=null;
+	JScrollPane jsp=null;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		QQframe qf=new QQframe();
+		
+	}
+	public QQframe()
+	{
+		jta=new JTextArea();
+		jsp=new JScrollPane(jta);
+		
+		jp1=new JPanel();
+		String [] chatter= {"Bush","Ladeng"};
+		jcb=new JComboBox(chatter);
+		jtf=new JTextField();
+		jb=new JButton("send");
+		//set layout manager
+		//add components
+		jp1.add(jcb);
+		jp1.add(jtf);
+		jp1.add(jb);
+		
+		this.add(jsp);
+		this.add(jp1,BorderLayout.SOUTH);
+		this.setIconImage(new ImageIcon("images/qq.jpg").getImage());
+		this.setTitle("Tecent QQ");
+		this.setSize(300,200);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setLocation(200, 200);
+		this.setVisible(true);
+	
+	}
+}

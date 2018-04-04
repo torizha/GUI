@@ -1,0 +1,40 @@
+package com.userInterface;
+import java.awt.*;
+import javax.swing.*;
+
+public class SplitPane extends JFrame{
+
+	//define 
+	JSplitPane jsp;
+	JList jlist;
+	JLabel jl;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		SplitPane sl=new SplitPane();
+		
+	}
+	public SplitPane()
+	{
+		String [] words= {"boy","girl","bird","dog","cat"};
+		jlist=new JList(words);
+		jl=new JLabel(new ImageIcon("images/king.jpg"));
+		
+		//Create Splitpane
+		
+		jsp=new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,jlist,jl);
+		jsp.setOneTouchExpandable(true);
+		
+		//set layout manager
+		
+		//add components
+		this.add(jsp);
+		this.setSize(700,500);
+		this.setLocation(200,200);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setVisible(true);
+		
+		
+	}
+
+}

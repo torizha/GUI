@@ -1,0 +1,102 @@
+package com.userInterface;
+import java.awt.*;
+import javax.swing.*;
+public class Qlogin extends JFrame {
+
+	//North
+	JLabel jl1;
+	//SOUTH
+	JButton jb1,jb2,jb3;
+	JPanel jp1;
+	//Middle
+	JTabbedPane jtp;
+	JPanel jp2,jp3,jp4;
+	
+	JLabel jl2,jl3,jl4,jl5;
+	//input qq number area
+	JTextField jtf;
+	JPasswordField jpf;
+	//cancel qq button
+	JButton jb4;
+	//hide, remember qq pin
+	JCheckBox jcb1,jcb2;
+	
+	public Qlogin()
+	{
+		//create components
+		jl2 = new JLabel("QQ", JLabel.CENTER); 
+		jl3 = new JLabel("Password", JLabel.CENTER); 
+		jl4 = new JLabel("Forgot Password", JLabel.CENTER); 
+		jl4.setFont(new Font("calibri", Font.PLAIN,16));
+		jl4.setForeground(Color.BLUE);
+		jl5 = new JLabel("<html><a href='www.qq.com'>apply for pin protection</a>"); 
+		jl5.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		
+		jtf = new JTextField();
+		jpf=new JPasswordField();
+		jb4=new JButton(new ImageIcon("images/clear.jpg"));
+		
+		jcb1=new JCheckBox("Hide");
+		jcb2=new JCheckBox("Remember pin");
+		
+		//NORTH
+		jl1=new JLabel(new ImageIcon("images/tou.jpg"));
+		//SOUTH
+		jp1 = new JPanel();
+		jb1= new JButton(new ImageIcon("images/login.jpg"));
+		jb2=new JButton(new ImageIcon("images/cancel.jpg"));
+		jb3= new JButton(new ImageIcon("images/help.jpg"));
+		
+		//MIDDLE
+		jtp=new JTabbedPane();
+		jp2=new JPanel();
+		jp3=new JPanel();
+		jp3.setBackground(Color.RED);
+		jp4=new JPanel();
+		jp4.setBackground(new Color(0,0,255));
+		
+		//add panel on jtp
+		jtp.add("QQ num", jp2);
+		jtp.addTab("Phone", jp3);
+		jtp.add("Email", jp4);
+		
+		//set layout manager
+		jp2.setLayout(new GridLayout(3,3));
+		
+		//add components
+		jp1.add(jb1);
+		jp1.add(jb2);
+		jp1.add(jb3);
+		
+		jp2.add(jl2);
+		jp2.add(jtf);
+		jp2.add(jb4);
+		jp2.add(jl3);
+		jp2.add(jpf);
+		jp2.add(jl4);
+		jp2.add(jcb1);
+		jp2.add(jcb2);
+		jp2.add(jl5);
+		
+		this.add(jp1,BorderLayout.SOUTH);
+		this.add(jl1, BorderLayout.NORTH);
+		this.add(jtp, BorderLayout.CENTER);
+		
+		//show components
+		
+		this.setIconImage(new ImageIcon("images/qq.jpg").getImage());
+		ImageIcon icon=new ImageIcon("images/qq.jpg");
+		this.setIconImage(icon.getImage());
+		this.setSize(600, 300);
+		this.setLocation(200,100);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setVisible(true);
+			
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Qlogin ql=new Qlogin();
+	}
+	
+
+}
